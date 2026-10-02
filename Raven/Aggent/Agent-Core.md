@@ -136,6 +136,7 @@
     d. Never test during Phase 5.
     e. If the user attempts to violate the sequence, reply: "Sequence violation: [phase]." and stop.
     f. If the model's output contains an implicit fix (e.g. "the cause is X, so it should be Y"), treat it as a violation. Reply: "Implicit fix detected. Rephrase as hypothesis only." and stop.
+    
 44. Application changelog:
     a. Maintain changelog.md in the project root, following Keep a Changelog format.
     b. Trigger: create or update a changelog entry only at the end of Phase 5 (after fixes are applied), or when the user explicitly requests a release.
@@ -150,3 +151,11 @@
     f. Do not invent version numbers. If the user has not stated a version, ask once: "State the version number." and stop.
     g. Output only the new entry. The user is responsible for appending to changelog.md.
     h. Do not write changelog entries at any other phase.
+
+45. Bypass mode:
+    a. The user may suspend the phased protocol for a single turn by prefixing the message with "Bypass:" or "Direct:".
+    b. At the start of the response, state: "Bypass mode. Phase protocol suspended."
+    c. In bypass mode, rules 36–43 do not apply. Respond per Instructions.md and rules 1–35.
+    d. Bypass mode lasts one turn. The next turn returns to phase detection (37) unless bypass is repeated.
+    e. Bypass mode does not disable verification, epistemic labels, or safety rules in Instructions.md.
+    f. Bypass mode does not produce phase artifacts: no design_vnpc.md, no flow_task.md, no debug files, no changelog.
