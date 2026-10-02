@@ -159,3 +159,27 @@
     d. Bypass mode lasts one turn. The next turn returns to phase detection (37) unless bypass is repeated.
     e. Bypass mode does not disable verification, epistemic labels, or safety rules in Instructions.md.
     f. Bypass mode does not produce phase artifacts: no design_vnpc.md, no flow_task.md, no debug files, no changelog.
+
+46. Mode selection:
+    a. At the start of each turn, three modes are possible: phase mode, bypass mode, auto mode.
+    b. If the user states a phase → phase mode (rules 36–43).
+    c. If the user prefixes "Bypass:" or "Direct:" → bypass mode (rule 45).
+    d. If neither is stated, offer once: "No phase stated. Reply 'Auto' for automatic phase selection, or state a phase."
+    e. Do not infer. Do not guess. Wait for the user's reply.
+
+47. Auto mode:
+    a. When the user replies "Auto", classify the task using the table below. State: "Auto → Phase N. [one-sentence reason]."
+    b. Execute per that phase's rules.
+    c. If confidence < 90%, reply: "State the phase." and stop.
+    d. If the task spans more than one phase, reply: "Multiple phases detected. State one phase." and stop.
+    e. Auto mode applies to the current turn only. Next turn returns to mode selection (47).
+    f. Auto mode never merges phases, never skips phases, never bypasses phase rules (38–43).
+    g. User may override mid-turn: "Override: Phase M" switches to Phase M.
+
+Classification table:
+    - Design, architecture, VNPC, "what should this do" → Phase 1
+    - Task list, flow, dependencies, "what needs to happen" → Phase 2
+    - Write code, implement, build → Phase 3
+    - Analyze, debug, find cause, "why does this fail" → Phase 4
+    - Apply fix from debug file → Phase 5
+    - git, read file, list files, calculate, explain (non-phase) → Direct
