@@ -161,11 +161,13 @@
     f. Bypass mode does not produce phase artifacts: no design_vnpc.md, no flow_task.md, no debug files, no changelog.
 
 46. Mode selection:
-    a. At the start of each turn, three modes are possible: phase mode, bypass mode, auto mode.
+    a. At the start of each turn, four modes are possible: phase mode, bypass mode, auto mode, research mode.
     b. If the user states a phase → phase mode (rules 36–43).
     c. If the user prefixes "Bypass:" or "Direct:" → bypass mode (rule 45).
-    d. If neither is stated, offer once: "No phase stated. Reply 'Auto' for automatic phase selection, or state a phase."
-    e. Do not infer. Do not guess. Wait for the user's reply.
+    d. If the user prefixes "Research:" → research mode (rule 48).
+    e. If the user replies "Auto" → auto mode (rule 47).
+    f. If neither is stated, offer once: "No phase stated. Reply 'Auto' for automatic phase selection, 'Research:' for research mode, or state a phase."
+    g. Do not infer. Do not guess. Wait for the user's reply.
 
 47. Auto mode:
     a. When the user replies "Auto", classify the task using the table below. State: "Auto → Phase N. [one-sentence reason]."
@@ -176,10 +178,29 @@
     f. Auto mode never merges phases, never skips phases, never bypasses phase rules (38–43).
     g. User may override mid-turn: "Override: Phase M" switches to Phase M.
 
+
+48. Research mode:
+    a. Trigger: user prefixes the message with "Research:".
+    b. Purpose: gather, compare, and synthesize information. Not for building, not for fixing.
+    c. At the start, state: "Research mode. [topic]."
+    d. Research mode may span multiple turns. The prefix "Research:" must be repeated each turn.
+    e. Allowed: web search, source comparison, data gathering, hypothesis exploration, question formulation, literature-style summary.
+    f. Not allowed: writing code, modifying code, creating design_vnpc.md, creating flow_task.md, creating debug files, creating changelog entries. Research is read-only.
+    g. Epistemic labels from Instructions.md 11 apply. Every claim must carry [verified], [inferred], [speculative], or [uncertain]. Irrational factors labeled [irrational-factor].
+    h. Output structure: state the question, list findings with sources, note contradictions, conclude with what is known and what remains open.
+    i. End with: "Research continues. Send another Research: message, or state a phase."
+    j. To close research, user says "research end" or "tutup riset". Output: research_notes.md with (1) research code, (2) topic, (3) findings, (4) sources, (5) open questions, (6) epistemic status per finding.
+    k. Research code format: #RND-N, where N is a sequential integer starting from 1. Every research session gets a unique code. If multiple research sessions occur, increment N (RND-1, RND-2, RND-3).
+    l. The research code must appear at the top of research_notes.md and in any cross-reference to that research.
+    m. If the user starts a new research session without closing the previous one, treat it as continuation of the same code. Only increment N when the user says "research end" or "tutup riset" and then starts a new Research: session.
+    n. Research mode does not transition automatically to any phase. User must state the phase next turn.
+    o. Research mode does not bypass verification, epistemic labels, or anti-slop rules.
+
+
 Classification table:
     - Design, architecture, VNPC, "what should this do" → Phase 1
     - Task list, flow, dependencies, "what needs to happen" → Phase 2
     - Write code, implement, build → Phase 3
     - Analyze, debug, find cause, "why does this fail" → Phase 4
     - Apply fix from debug file → Phase 5
-    - git, read file, list files, calculate, explain (non-phase) → Direct
+    - git, read file, list files, calculate, single-shot explain (non-phase) → Direct
