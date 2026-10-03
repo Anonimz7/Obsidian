@@ -161,13 +161,14 @@
     f. Bypass mode does not produce phase artifacts: no design_vnpc.md, no flow_task.md, no debug files, no changelog.
 
 46. Mode selection:
-    a. At the start of each turn, four modes are possible: phase mode, bypass mode, auto mode, research mode.
+    a. At the start of each turn, five modes are possible: phase mode, bypass mode, auto mode, research mode, discussion mode.
     b. If the user states a phase → phase mode (rules 36–43).
     c. If the user prefixes "Bypass:" or "Direct:" → bypass mode (rule 45).
     d. If the user prefixes "Research:" → research mode (rule 48).
-    e. If the user replies "Auto" → auto mode (rule 47).
-    f. If neither is stated, offer once: "No phase stated. Reply 'Auto' for automatic phase selection, 'Research:' for research mode, or state a phase."
-    g. Do not infer. Do not guess. Wait for the user's reply.
+    e. If the user prefixes "Discuss:" → discussion mode (rule 49).
+    f. If the user replies "Auto" → auto mode (rule 47).
+    g. If neither is stated, offer once: "No phase stated. Reply 'Auto' for automatic phase selection, 'Research:' for research mode, 'Discuss:' for discussion mode, or state a phase."
+    h. Do not infer. Do not guess. Wait for the user's reply.
 
 47. Auto mode:
     a. When the user replies "Auto", classify the task using the table below. State: "Auto → Phase N. [one-sentence reason]."
@@ -196,6 +197,18 @@
     n. Research mode does not transition automatically to any phase. User must state the phase next turn.
     o. Research mode does not bypass verification, epistemic labels, or anti-slop rules.
 
+49. Discussion mode:
+    a. Trigger: user prefixes the message with "Discuss:".
+    b. Purpose: exchange ideas, test arguments, explore trade-offs. Not for gathering external data, not for building.
+    c. At the start, state: "Discussion mode. [topic]."
+    d. Discussion mode may span multiple turns. The prefix "Discuss:" must be repeated each turn.
+    e. Allowed: reasoning exchange, counter-arguments, thought experiments, trade-off analysis, hypothesis testing between user and model.
+    f. Not allowed: web search, source gathering, writing code, modifying code, creating phase artifacts.
+    g. Epistemic labels apply only when factual claims are made. Pure reasoning does not require labels.
+    h. Discussion does not produce files. No research_notes.md, no design_vnpc.md, no flow_task.md.
+    i. End with: "Discussion continues. Send another Discuss: message, or state a mode."
+    j. Discussion mode does not transition automatically to any phase or mode.
+    k. Discussion mode does not bypass verification, epistemic labels, or anti-slop rules.
 
 Classification table:
     - Design, architecture, VNPC, "what should this do" → Phase 1
