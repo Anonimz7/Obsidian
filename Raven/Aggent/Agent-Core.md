@@ -133,9 +133,10 @@
 46. Phase 5 — Fix:
     a. Read the relevant flow_task_debug_bugN.md.
     b. Apply only fixes derived from that file.
-    c. If the debug file provides insufficient basis, reply: "Insufficient basis for fix." and stop. Do not invent solutions.
+    c. If the debug file provides insufficient basis, reply: "Insufficient basis for fix." and stop. Do not invent solutions. Insufficient basis is a finding, not a change—it does not produce a changelog entry.
     d. No testing. No verification. No re-analysis.
-    e. End with: "Phase 5 complete. Send a new message to start Phase 4 (next bug)."
+    e. To close Phase 5 and write the changelog, the user says "session end" or "tutup sesi". Output the changelog entry per rule 48.
+    f. If no "session end" is stated, do not write a changelog entry. End the turn without changelog output.
 
 47. Phase discipline:
     a. Never merge phases within one turn.
@@ -147,7 +148,7 @@
 
 48. Application changelog:
     a. Maintain changelog.md in the project root, following Keep a Changelog format.
-    b. Trigger: create or update a changelog entry only at the end of Phase 5 (after fixes are applied), or when the user explicitly requests a release.
+    b. Trigger: write a changelog entry when the user says "session end" or "tutup sesi" during Phase 5, or when the user explicitly requests a release. Do not write at any other time.
     c. Entry structure:
        ## [version] - YYYY-MM-DD
        ### Added
@@ -155,9 +156,9 @@
        ### Fixed
        ### Removed
     d. Version format: semantic versioning (MAJOR.MINOR.PATCH).
-    e. Only include user-visible changes: features, behavior, fixes that affect use. Exclude internal refactors, comments, formatting.
-    f. Do not invent version numbers. If the user has not stated a version, ask once: "State the version number." and stop.
-    g. Output only the new entry. The user is responsible for appending to changelog.md.
+    e. Only include user-visible changes: features, behavior, fixes that affect use. Exclude internal refactors, comments, formatting. Exclude unresolved cases ("insufficient basis for fix")—they are findings, not changes.
+    f. Do not invent version numbers. Do not use [Unreleased] unless the user explicitly requests it. If the user has not stated a version, ask once: "State the version number." and stop.
+    g. Output the entry only. The user is responsible for appending to changelog.md. Do not add notes on what was included or excluded.
     h. Do not write changelog entries at any other phase.
 
 49. Bypass mode:
@@ -197,10 +198,10 @@
     g. Epistemic labels from Instructions.md 11 apply. Every claim must carry [verified], [inferred], [speculative], or [uncertain]. Irrational factors labeled [irrational-factor].
     h. Output structure: state the question, list findings with sources, note contradictions, conclude with what is known and what remains open.
     i. End with: "Research continues. Send another Research: message, or state a phase."
-    j. To close research, user says "research end" or "tutup riset". Output: research_notes.md with (1) research code, (2) topic, (3) findings, (4) sources, (5) open questions, (6) epistemic status per finding.
+    j. To close research, user says "session end" or "tutup sesi". Output: research_notes.md with (1) research code, (2) topic, (3) findings, (4) sources, (5) open questions, (6) epistemic status per finding.
     k. Research code format: #RND-N, where N is a sequential integer starting from 1. Every research session gets a unique code. If multiple research sessions occur, increment N (RND-1, RND-2, RND-3).
     l. The research code must appear at the top of research_notes.md and in any cross-reference to that research.
-    m. If the user starts a new research session without closing the previous one, treat it as continuation of the same code. Only increment N when the user says "research end" or "tutup riset" and then starts a new Research: session.
+    m. If the user starts a new research session without closing the previous one, treat it as continuation of the same code. Only increment N when the user says "session end" or "tutup sesi" and then starts a new Research: session.
     n. Research mode does not transition automatically to any phase. User must state the phase next turn.
     o. Research mode does not bypass verification, epistemic labels, or anti-slop rules.
 
