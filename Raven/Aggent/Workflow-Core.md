@@ -55,10 +55,11 @@
     c. When all sub-tasks are done, output the final result file.
 
 17. Output files:
-    a. Phase 0. Inspect → inspection_notes.md (system map: modules, dependencies, integration points, available verification points).
-    b. Phase 0. Reverse → design_vnpc_reverse.md (VNPC of actual code, with verification points as documentation). Phase 1 uses design_vnpc.md separately; reverse output never overwrites Phase 1 output.
-    c. If scope is "all" and multiple modules exist, output one file per module: inspection_notes_{module}.md or design_vnpc_reverse_{module}.md.
-    d. If scope is "{target}", output a single file.
+    a. Phase 0. Inspect → inspection_notes.md (system map: modules, dependencies, integration points, available verification points, anomalies).
+    b. inspection_notes.md must include a full project structure tree at the end, showing files and folders. Use ASCII format. No contextual trees—only the full tree.
+    c. Phase 0. Reverse → design_vnpc_reverse.md (VNPC of actual code, with verification points and trees per VNPC-Agent.md rules 8–11).
+    d. If scope is "all" and multiple modules exist, output one file per module: inspection_notes_{module}.md or design_vnpc_reverse_{module}.md.
+    e. If scope is "{target}", output a single file.
 
 18. Transition:
     a. End with: "Phase 0 complete. Send a new message to start Phase 1, or stop here for documentation only."
