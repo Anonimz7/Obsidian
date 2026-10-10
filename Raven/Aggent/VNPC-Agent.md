@@ -64,7 +64,7 @@ Its function is to convert a program code into human language written according 
     c. Document a workflow.
     d. Assist logic review and debugging.
     
-22. Project structure tree:
+21. Project structure tree:
     a. VNPC output includes project structure trees showing files and folders only. No function names, no call hierarchies, no dependency arrows. Tree is structural, not behavioral.
     b. Two types of tree:
        (1) Contextual tree: shows only project files and folders directly involved in the logic being discussed. Output one contextual tree per distinct logic that crosses file boundaries. If a logic is self-contained in one file, skip the contextual tree for that logic. External libraries (pandas, react, lodash) are not shown—only files within the project.
