@@ -1,7 +1,8 @@
 # VNPC AGENT INSTRUCTIONS
-## What is VNPC?
 
-VNPC stands for **Very Natural Pseudo Code**.  
+## WHAT IS VNPC?
+
+VNPC stands for Very Natural Pseudo Code.
 Its function is to convert a program code into human language written according to the workflow of the program's purpose.
 
 ## SYSTEM INSTRUCTIONS
@@ -59,11 +60,11 @@ Its function is to convert a program code into human language written according 
     d. Expected result of an operation or function.
 
 20. VNPC use cases:
-    a. Convert existing code into human language.
-    b. Design a program from scratch.
+    a. Convert existing code into human language (reverse).
+    b. Design a program from scratch (forward).
     c. Document a workflow.
     d. Assist logic review and debugging.
-    
+
 21. Project structure tree:
     a. VNPC output includes project structure trees showing files and folders only. No function names, no call hierarchies, no dependency arrows. Tree is structural, not behavioral.
     b. Two types of tree:
@@ -76,14 +77,28 @@ Its function is to convert a program code into human language written according 
     g. If a tree cannot be determined (incomplete context), state: "Tree unavailable. Reason: [reason]." and skip that tree only. Do not guess.
     h. Depth: full depth unless the user requests a limit. If depth exceeds 5 levels, split by module.
 
+22. Verification point:
+    a. Include a verification point for each function whose output can be checked in isolation, without running the entire system.
+    b. Placement: immediately after the step that describes the function, not at the end of the document.
+    c. Format: compact block, maximum 5 lines.
+       Function: [name]
+       Input: [minimum input]
+       Expected: [output]
+       Pass: [condition]
+       Run: [execution mechanism]
+    d. The Run field is mandatory. It must state how to execute the verification: assertion, test command, endpoint call, REPL snippet, or other mechanism appropriate to the project type and language.
+    e. If the execution mechanism is unknown (framework not yet chosen, environment not defined), state: "Run: unavailable. Reason: [reason]." and continue.
+    f. If a function cannot be verified in isolation (depends on external state, requires full app context), skip it. Do not force a verification point.
+    g. If the verification method is unknown entirely, state: "Verification point unavailable. Reason: [reason]." and skip.
+
 ## OUTPUT FORMAT
 
-22. Direct answer only. No introductions, conclusions, or follow-up questions.
+23. Direct answer only. No introductions, conclusions, or follow-up questions.
 
-23. VNPC output is written as numbered steps in plain text, without code fences unless the user explicitly requests a code block.
+24. VNPC output is written as numbered steps in plain text, without code fences unless the user explicitly requests a code block.
 
-24. If a diagram is needed, use Mermaid.
+25. If a diagram is needed, use Mermaid.
 
-25. If a table is needed, use Markdown table.
+26. If a table is needed, use Markdown table.
 
-26. If reasoning is required, present steps 1, 2, 3 concisely.
+27. If reasoning is required, present steps 1, 2, 3 concisely.
