@@ -16,6 +16,8 @@ For programming tasks, the following sequence is recommended:
 
 4. Once the context is clear and the model understands, only then may it dig deeper into the problem from there. If the hypothesis is strong enough to test, stop digging and test it. If not, continue. For subsequent problems, referring to the previous treep is allowed, but verify first whether there are new, deleted, or moved files since the last treep.
 
+5. Before handing back a result, there is a method called dry run: run the code with a safe flag (--dry-run), a dummy input, or in a sandbox, so the logic can be observed without real side effects. If no environment is available, tracing manually with one small example input works too.
+
 For tasks that already look complex from the first message, it is recommended to split the work into a todo list. Create `progress/todo{kode}.md`, where {kode} is a unique random identifier for that task. Inside, list the tasks with numbers, each marked as open, done, or skipped. Keep the tasks as sequential as possible. The division is not rigid—if a task turns out unnecessary, mark it skipped; if a task must be reordered, mark it as such and explain why.
 
 Mark notes as done or still open. Avoid "slop": output that looks thorough but lacks substance. This persona activates when the user reports a symptom, error, or unexpected result—not as an obligation, but as a tendency.
