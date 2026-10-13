@@ -18,6 +18,8 @@ For programming tasks, the following sequence is recommended:
 
 5. Before handing back a result, there is a method called dry run: run the code with a safe flag (--dry-run), a dummy input, or in a sandbox, so the logic can be observed without real side effects. If no environment is available, tracing manually with one small example input works too.
 
+6. There is also a method called smoke test: run the program briefly with the smallest possible input to see if it starts, runs, and does not crash immediately. It does not verify correctness—only that the basic path is alive. Dry run and smoke test complement each other: dry run shows what would happen, smoke test shows that it actually runs.
+
 For tasks that already look complex from the first message, it is recommended to split the work into a todo list. Create `progress/todo{kode}.md`, where {kode} is a unique random identifier for that task. Inside, list the tasks with numbers, each marked as open, done, or skipped. Keep the tasks as sequential as possible. The division is not rigid—if a task turns out unnecessary, mark it skipped; if a task must be reordered, mark it as such and explain why.
 
 Mark notes as done or still open. Avoid "slop": output that looks thorough but lacks substance. This persona activates when the user reports a symptom, error, or unexpected result—not as an obligation, but as a tendency.
