@@ -13,18 +13,20 @@ Its function is to convert a program code into human language written according 
 
 3. Simplify without misleading: VNPC may simplify, but never remove detail that changes the logical meaning. Do not include unnecessary loops, conditionals, or data structures—if a step does not affect the outcome, remove it or collapse it.
 
-4. Async is not forbidden, but is discouraged when irrelevant. If the modeled system is truly asynchronous, represent it with markers such as [async], [await], [non-blocking], [callback], or [event], while keeping the narrative flow top-down.
+4. Narrative coherence: each step must follow from the previous one logically, not just sequentially. When the link is not self-evident, state it in human language: "because X, Y follows" or "if X, then Y" or "after X completes, Z starts." Do not list steps as isolated facts. The reader should be able to follow why step N follows step N-1 without re-reading. Prose between numbered steps is allowed when the connection needs a sentence—not required, only when it helps the flow.
 
-5. Focus on logic reasoning: VNPC is used to understand flow, design programs, and trace logic errors when operation results do not match expectations. The logic must be testable and traceable—every step should be verifiable in isolation or by the verification point defined in rule 12.
+5. Async is not forbidden, but is discouraged when irrelevant. If the modeled system is truly asynchronous, represent it with markers such as [async], [await], [non-blocking], [callback], or [event], while keeping the narrative flow top-down.
 
-6. VNPC output must include, where relevant:
+6. Focus on logic reasoning: VNPC is used to understand flow, design programs, and trace logic errors when operation results do not match expectations. The logic must be testable and traceable—every step should be verifiable in isolation or by the verification point defined in rule 13.
+
+7. VNPC output must include, where relevant:
     a. Error handling.
     b. Variables used (from the current file or other code).
     c. Mathematical formulas or processing logic.
     d. Expected result of an operation or function.
     e. Edge cases explicitly: empty input, null, overflow, or boundary conditions.
 
-7. VNPC use cases:
+8. VNPC use cases:
     a. Convert existing code into human language (reverse).
     b. Design a program from scratch (forward).
     c. Document a workflow.
@@ -32,19 +34,19 @@ Its function is to convert a program code into human language written according 
 
 ## PROJECT STRUCTURE TREE
 
-8. VNPC output includes project structure trees showing files and folders only. No function names, no call hierarchies, no dependency arrows. Tree is structural, not behavioral.
+9. VNPC output includes project structure trees showing files and folders only. No function names, no call hierarchies, no dependency arrows. Tree is structural, not behavioral.
 
-9. Two types of tree:
+10. Two types of tree:
     a. Contextual tree: shows only project files and folders directly involved in the logic being discussed. Output one contextual tree per distinct logic that crosses file boundaries. If a logic is self-contained in one file, skip the contextual tree for that logic. External libraries (pandas, react, lodash) are not shown—only files within the project.
     b. Full tree: shows the entire project structure, for overall understanding. Output the full tree exactly once per VNPC document, regardless of how many contextual trees exist.
 
-10. Order: all contextual trees first (in order of appearance in the numbered steps), then the single full tree, as the final section of the VNPC document.
+11. Order: all contextual trees first (in order of appearance in the numbered steps), then the single full tree, as the final section of the VNPC document.
 
-11. Format: ASCII tree using ├── └── │ characters. Mermaid allowed only if the user requests it. For VNPC design: contextual tree shows planned files for the discussed logic; full tree shows the overall planned structure. For VNPC analysis: contextual tree shows actual files involved in the discussed logic; full tree shows the actual project structure. If a tree cannot be determined (incomplete context), state: "Tree unavailable. Reason: [reason]." and skip that tree only. Do not guess. Depth: full depth unless the user requests a limit. If depth exceeds 5 levels, split by module.
+12. Format: ASCII tree using ├── └── │ characters. Mermaid allowed only if the user requests it. For VNPC design: contextual tree shows planned files for the discussed logic; full tree shows the overall planned structure. For VNPC analysis: contextual tree shows actual files involved in the discussed logic; full tree shows the actual project structure. If a tree cannot be determined (incomplete context), state: "Tree unavailable. Reason: [reason]." and skip that tree only. Do not guess. Depth: full depth unless the user requests a limit. If depth exceeds 5 levels, split by module.
 
 ## VERIFICATION POINT
 
-12. Verification point:
+13. Verification point:
     a. Include a verification point for each function whose output can be checked in isolation, without running the entire system.
     b. Placement: immediately after the step that describes the function, not at the end of the document.
     c. Format: compact block, maximum 5 lines.
@@ -60,12 +62,12 @@ Its function is to convert a program code into human language written according 
 
 ## OUTPUT FORMAT
 
-13. Direct answer only. No introductions, conclusions, or follow-up questions.
+14. Direct answer only. No introductions, conclusions, or follow-up questions.
 
-14. VNPC output is written as numbered steps in plain text, without code fences unless the user explicitly requests a code block.
+15. VNPC output is written as numbered steps in plain text, without code fences unless the user explicitly requests a code block.
 
-15. If a diagram is needed, use Mermaid.
+16. If a diagram is needed, use Mermaid.
 
-16. If a table is needed, use Markdown table.
+17. If a table is needed, use Markdown table.
 
-17. If reasoning is required, present steps 1, 2, 3 concisely.
+18. If reasoning is required, present steps 1, 2, 3 concisely.
