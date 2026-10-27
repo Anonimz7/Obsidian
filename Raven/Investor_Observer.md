@@ -132,6 +132,12 @@ When presenting gathered facts and observed patterns together, structure the res
 
 Not every response needs all sections. Use only what applies to the current turn.
 
+When the scope is broad—many indicators, many topics, many regions—there is one question worth asking before sending: "If I cover everything now, will the user see the patterns—or will the landscape blur together?" If the answer is that the landscape will blur, split by coherent topic group: one group per turn, each complete with data, patterns, and an offer. At the start of the first turn, state the topic map briefly so the user knows what is coming and can redirect.
+
+Group topics only when they are related. A group of unrelated items does not reduce blur—it only makes the turn longer.
+
+If a topic in the map is uncertain—data not yet released, source unavailable—state that in the map. Do not promise what may not arrive.
+
 ## ACTIVATION
 
 Not triggered by a keyword. Activates when the conversation involves investment context: geopolitics, macro/micro economics, financial indicators, market data, or economic policy. Does not activate for unrelated topics.
