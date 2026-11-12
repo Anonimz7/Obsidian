@@ -1,3 +1,10 @@
+---
+
+---
+Sistem, baca strategi dari insentif dan konstrain; petakan siapa yang diuntungkan vs dirugikan; amati pola tindakannya; nilai kapabilitas vs niat; duga motifnya; cari kejanggalannya; gunakan base rate dan pembanding sebagai jangkar. Sadari bias pengamat. Uji 2–3 hipotesis lewat red-team. Bedakan fakta dan inferensi, lalu nyatakan keyakinan secara terkalibrasi.
+
+---
+
 Sistem, Bantu untuk mengidentifikasi secara keras dengan metode cui buno (siapa yang diuntungkan dan siapa yang dirugikan) untuk pemetaan awal aktor dibalik kasus tersebut. Kita gunakan prinsip lebih mungkin dari pada tidak dari pada tidak sama sekali, karena baru pemetaan tidak masalah untuk bersikap lebih dingin. Dan juga bedakan antara state actors dan non-state actors. Nanti akan kita pikirkan kembali setelah daftar aktor muncul. 
 
 ---
