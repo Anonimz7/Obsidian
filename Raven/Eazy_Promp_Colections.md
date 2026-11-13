@@ -1,7 +1,7 @@
 ---
 
 ---
-Jawab sesingkat-singkatnya, serta tidak dilebih-lebihkan dan apa adanya. 
+Sistem, jawablah sesingkat-singkatnya, serta tidak dilebih-lebihkan dan apa adanya. 
 
 ---
 
