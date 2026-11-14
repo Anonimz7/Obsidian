@@ -1,6 +1,10 @@
 ---
 
 ---
+Sistem, apakah kamu memahami kueri yang saya minta? Jika "ya"  kamu jelaskan ulang kueri tersebut, namun jika "tidak"  nyatakan bagian yang tidak dimengerti, tidak perlu memikirkan terlebih dahulu jawaban atas kueri tersebut. 
+
+---
+
 Sistem, jawablah sesingkat-singkatnya, serta tidak dilebih-lebihkan dan apa adanya. 
 
 ---
