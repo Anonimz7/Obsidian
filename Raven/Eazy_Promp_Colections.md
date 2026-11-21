@@ -1,6 +1,10 @@
 ---
 
 ---
+Sistem, respon dengan cara paling minimal
+
+---
+
 Sistem, apa yang jelas tersurat dan kemungkinan yang tersirat?
 
 ---
