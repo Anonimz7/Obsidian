@@ -1,7 +1,7 @@
 ---
 
 ---
-Sistem, respon dengan cara paling minimal
+Sistem, anda respon dengan cara paling minimal
 
 ---
 
