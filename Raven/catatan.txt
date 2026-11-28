@@ -1,1 +1,8 @@
-Skeleton programming > comment placeholder, TODO, stub, dan skeleton code
+Skeleton programming (paradigma)
+└─ Skeleton code (artefak)
+   ├─ Stub / placeholder
+   └─ Comment placeholder
+
+TODO marker = penanda tugas
+   • bisa menempel pada stub/skeleton
+   • bisa juga berdiri sendiri
